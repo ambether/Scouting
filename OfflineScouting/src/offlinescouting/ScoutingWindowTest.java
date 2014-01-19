@@ -5,7 +5,7 @@
  */
 
 package offlinescouting;
-
+import java.awt.Event;
 /**
  *@author Robotics SE
  * 
@@ -111,6 +111,7 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(this.currentScore != 0){
             this.currentScore --;
@@ -154,6 +155,7 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ScoutingWindowTest().setVisible(true);
+                
                 
             }
         });
