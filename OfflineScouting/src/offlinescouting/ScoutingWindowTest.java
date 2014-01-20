@@ -5,19 +5,42 @@
  */
 
 package offlinescouting;
-import java.awt.Event;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /**
  *@author Robotics SE
  * 
  */
 public class ScoutingWindowTest extends javax.swing.JFrame {
-    private int currentScore = 0;
+    protected int currentScore = 0;
 
     /**
      * Creates new form ScoutingWindow
      */
     public ScoutingWindowTest() {
         initComponents();
+        //init
+        jTextField1.setText(Integer.toString(currentScore));
+        //button 1 init
+        jButton1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){   
+                //Execute when button is pressed
+                if(currentScore != 0){
+                currentScore --;   
+                }
+                jTextField1.setText(Integer.toString(currentScore));
+                //System.out.println(currentScore);
+            }       
+        });
+        //button 2 init
+        jButton2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){   
+                //Execute when button is pressed                
+                currentScore ++;
+                jTextField1.setText(Integer.toString(currentScore));
+                //System.out.println(currentScore);
+            }       
+        });
     }
 
     /**
@@ -45,20 +68,22 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
         jLabel1.setText("Test Field #1");
 
         jButton1.setText("-");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jButton1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                //Execute when button is pressed
+                if(currentScore != 0){
+                    currentScore --;
+                }
+                jTextField1.setText(Integer.toString(currentScore));
+                jTextField1.updateUI();
+                System.out.println(currentScore);
             }
         });
 
         jButton2.setText("+");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setName(""); // NOI18N
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -72,20 +97,19 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jSeparator3))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,18 +136,6 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(this.currentScore != 0){
-            this.currentScore --;
-            this.jTextField1.setText(Integer.toString(currentScore));
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.currentScore ++;
-        this.jTextField1.setText(Integer.toString(currentScore));
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -163,12 +175,12 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    protected javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
+    protected javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

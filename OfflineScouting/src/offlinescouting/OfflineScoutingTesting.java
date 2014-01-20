@@ -12,11 +12,10 @@ package offlinescouting;
  */
 
 public class OfflineScoutingTesting {
-    static String[] tester;
+    protected static ScoutingWindowTest mainWindow = new ScoutingWindowTest();
     public static void init(){
-        ScoutingWindowTest mainWindow = new ScoutingWindowTest();
+        
         mainWindow.setVisible(true);
-        tester[0] = "hue";
     }
     /**
      * @param args the command line arguments
@@ -25,10 +24,8 @@ public class OfflineScoutingTesting {
         init();
     }
     
-    
-    
-    public void run(String[] hue){
-        main(hue);
+    public void run(){
+        
     }
     
 }
