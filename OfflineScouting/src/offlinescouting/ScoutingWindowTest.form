@@ -83,9 +83,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jButton1.addActionListener(new ActionListener(){&#xa;    public void actionPerformed(ActionEvent e){   &#xa;            //Execute when button is pressed&#xa;            if(currentScore != 0){&#xa;                currentScore --;&#xa;            }&#xa;            jTextField1.setText(Integer.toString(currentScore));&#xa;            jTextField1.updateUI();&#xa;            System.out.println(currentScore);&#xa;    }       &#xa;});"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

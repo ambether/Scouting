@@ -68,17 +68,6 @@ public class ScoutingWindowTest extends javax.swing.JFrame {
         jLabel1.setText("Test Field #1");
 
         jButton1.setText("-");
-        jButton1.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                //Execute when button is pressed
-                if(currentScore != 0){
-                    currentScore --;
-                }
-                jTextField1.setText(Integer.toString(currentScore));
-                jTextField1.updateUI();
-                System.out.println(currentScore);
-            }
-        });
 
         jButton2.setText("+");
 
